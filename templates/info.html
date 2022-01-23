@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Info{% endblock %}
+
+
+{% block head %}
+  {{ super() }}
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/info.css') }}">
+{% endblock %}
+
+
+
+
+
+{% block onmain %}
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <h1 class="display-1 ">Чому це так шкідливо? </h1>
+    </div>
+    <hr class="m-0" />
+    <br><br>
+
+      <div class="data-info-content">
+        <blockquote class="blockquote">
+          <p>Биткоїн засуджували за високе споживання електроенергії з його появи. Більшість критиків не поспішають поділитися своїми міркуваннями, джерелами та розрахунками, через що підтвердити чи спростувати їхню позицію досить складно.
+          </p>
+        </blockquote>
+      </div>
+  <div class="container">
+
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <figure class="bg-white p-3 rounded" style="border-left: .25rem solid #a34e78;">
+          <blockquote class="blockquote pb-2">
+            <p>
+              Треба заборонити видобуток біткоїну: через викиди вуглекислого газу майнінг до дідька зруйнує навколишнє середовище.
+            </p>
+          </blockquote>
+          <figcaption class="blockquote-footer mb-0 font-italic">
+            Чарлі Стросс - англійський письменник-фантаст
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col col-lg-6">
+        <figure class="bg-white p-3 rounded" style="border-left: .25rem solid #f68e9d;">
+          <blockquote class="blockquote pb-2">
+            <p>
+              Біткойн використовує більше електроенергії на транзакцію, ніж будь-який інший метод, відомий людству, і тому це не дуже гарна річ для клімату
+            </p>
+          </blockquote>
+          <figcaption class="blockquote-footer mb-0 font-italic">
+            Білл Гейтс
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container py-5 h-100">
+    <p>Оскільки майнінг не регулюється державою, а в деяких країнах навіть заборонено, складно знайти точні дані про те, скільки електроенергії на нього витрачається. Навіть там, де майнінг дозволено за законом, виробники електроенергії далеко не завжди знають, для чого використовуються їхні ресурси: у їхній статистиці майнінг окремо не враховується.</p>
+    <p>Ми можемо оцінити витрати енергії, спираючись на складність біткоїну. Складність - це значення, яке обчислюється протоколом і прикріплене до кожного блоку. Складністю вимірюється середня кількість хешів, які пішли у майнера на пошук одного дійсного блоку. Це значення знову розраховується кожні 2016 блоків (близько двох тижнів), щоб підтримувати інтервал між блоками близько десяти хвилин. Складність — це цільове значення, яке має перевищити жоден хеш. Процес можна порівняти з грою в дартс. Складність це центр мішені. Чим менший центральний сектор на мішені, тим більше дротиків потрібно кидати, щоб випадково в нього потрапити.</p>
+  </div>
+
+
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <h1 class="display-1 ">Звідки такі цифри? </h1>
+    </div>
+    <hr class="m-0" />
+    <br><br>
+
+      <div class="data-info-content">
+        <blockquote class="blockquote">
+          <p>За підрахунками <a href="https://digiconomist.net/">Digiconomist</a>, приблизне середнє споживання електроенергії на обробку однієї транзакції в мережі біткоїн становить - {{single_transaction_energy_price}} kWh.
+          </p>
+          <p>Оскільки блокчейн передбачає прозорість системи, ми можемо дізнатися точну кількість транзакцій в мережі, а саме - {{transaction_count}}. </p>
+          <p>З відкритих данних <a href="https://www.iea.org/">Міжнародне Енергетичного Агентства</a> за 2019 рік можна дізнатися середій об'єм викидів в атмосферу CO2 за kWh, а саме {{energy_co2}}. </p>
+        </blockquote>
+      </div>
+  <div class="container">
+
+  <div class="container py-5 h-100">
+    <p class="font-monospace">Зробивши не складні підрахунки з усіма зібраними даними, а саме - обчислюємо викиди за одну транзакцію, і множимо отриману кількість на загальну кількість транзакцій у мережі</p>
+  </div>
+
+
+
+
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <h1 class="display-1 ">Це багато чи мало? </h1>
+    </div>
+    <hr class="m-0" />
+    <br><br>
+
+      <div class="data-info-content">
+        <ul>
+          <li>Щодня біткоїн споживає стільки ж енергії, що й 520 тисяч канадців.</li>
+          <li>Біткоїн споживає стільки ж енергії, як і вся республіка Конго.</li>
+          <li>Можна порівняти з енергоспоживанням Таїланду.</li>
+          <li>Можна порівняти з вуглецевим слідом Кувейту.</li>
+        </ul>
+      </div>
+
+
+
+
+
+{% endblock %}

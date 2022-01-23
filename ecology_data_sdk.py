@@ -67,4 +67,26 @@ def get_co2_from_single_transaction():
 
 
 
+def total_btc_transaction_count():
+	""" Получить кол-во транзакций в сети btc """
+	url = "https://api.blockchain.info/charts/n-transactions-total?timespan=5weeks&rollingAverage=8hours&format=json"
+	try:
+		response = requests.get(url)
+		if response.status_code != 200:
+			return False
+		data = response.json()["values"][-1]
+		return int(data["y"])
+	except:
+		return False
 
+
+
+
+def get_co2_from_all_transaction():
+	co_from_one = get_co2_from_single_transaction()
+	if not co_from_one:
+		return False
+	total_count = total_btc_transaction_count()
+	if not total_count:
+		return False
+	return (co_from_one*total_count)
