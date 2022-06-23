@@ -5,6 +5,10 @@
 
 {% block head %}
   {{ super() }}
+
+    <!-- CHARTS.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 {% endblock %}
 
 
@@ -188,6 +192,35 @@
             <!-- News block -->
           </div>
         </div>
+
+
+    <!-- Charts block -->
+    <h1>Динаміка зміни викидів CO2 при роботі Bitcoin:</h1>
+    <div><canvas id="myChart"></canvas></div>
+    <script>
+      const labels = JSON.parse('{{ chart_labels | tojson }}')
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'BTC CO2 / початок місяця',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: JSON.parse('{{ chart_data | tojson }}'),
+        }]
+      };
+
+      const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+
+    </script>
       </section>
       <!--Section: Content-->
 

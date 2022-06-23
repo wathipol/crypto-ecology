@@ -29,6 +29,7 @@
 		    rel="stylesheet"
 		  />
 		  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
+
     {% endblock %}
 </head>
 <body>
@@ -92,16 +93,12 @@
     <div id="intro" class="p-5 text-center bg-light">
       <h1 class="elegantshd">~ {{co2_data}} kgCO2 </h1>
       <p class="mb-3">Викинуто в атмосферу через майнинг Bitcoin</p> 
-
     </div>
     <!-- Jumbotron -->
   </header>
   <!--Main Navigation-->
 
-
     <main class="my-5">{% block onmain %} {% endblock %}</main>
-
-
   <!--Footer-->
   <footer class="bg-light text-lg-start">
     <div class="py-4 text-center">
