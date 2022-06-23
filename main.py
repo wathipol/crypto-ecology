@@ -12,7 +12,7 @@ import time
 
 app = Flask(__name__)
 load_dotenv()
-DEBUG_MODE = True
+DEBUG_MODE = False
 MONGO_URI = os.environ.get("MONGO_URL")
 if MONGO_URI is None:
     print("App not initialized...")
